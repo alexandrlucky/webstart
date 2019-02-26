@@ -4,7 +4,7 @@ body {
 }
 
 img {
-  min-width: 100%;
+  max-width: 100%;
 }
 
 .container {
@@ -30,6 +30,8 @@ img {
   background-color: #ffd200;
   border: none;
   padding: 18px 30px;
+  cursor: pointer;
+  outline: none;
 }
 
 /* Импорт стилей шапки */
@@ -87,7 +89,7 @@ img {
     display: none;
   }
   .navbar__button {
-    font-style: 12px;
+    font-size: 12px;
     padding: 15px 26px;
   }
   .navbar__logo {
