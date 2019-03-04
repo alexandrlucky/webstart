@@ -1,10 +1,28 @@
 @charset "UTF-8";
-body {
-  font-family: sans-serif;
+@font-face {
+  font-family: 'Museo Sans Light';
+  src: url("../fonts/MuseoSansCyrl/MuseoSansCyrl-300.eot");
+  src: url("../fonts/MuseoSansCyrl/MuseoSansCyrl-300.eot?#iefix") format("embedded-opentype"), url("../fonts/MuseoSansCyrl/MuseoSansCyrl-300.woff") format("woff"), url("../fonts/MuseoSansCyrl/MuseoSansCyrl-300.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
-img {
-  max-width: 100%;
+@font-face {
+  font-family: 'Museo Sans Bold';
+  src: url("../fonts/MuseoSansCyrl/MuseoSansCyrl-700.eot");
+  src: url("../fonts/MuseoSansCyrl/MuseoSansCyrl-700.eot?#iefix") format("embedded-opentype"), url("../fonts/MuseoSansCyrl/MuseoSansCyrl-700.woff") format("woff"), url("../fonts/MuseoSansCyrl/MuseoSansCyrl-700.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: 'Museo Sans Light', sans-serif;
+  font-weight: 300;
 }
 
 .container {
@@ -15,6 +33,9 @@ img {
 @media (max-width: 1200px) {
   .container {
     width: 760px;
+  }
+  img {
+    max-width: 100%;
   }
 }
 
@@ -32,6 +53,32 @@ img {
   padding: 18px 30px;
   cursor: pointer;
   outline: none;
+}
+
+.button:hover {
+  background-color: #ffdb33;
+}
+
+.section {
+  padding: 90px 0;
+}
+
+.section-title {
+  font-size: 24px;
+  font-family: 'Museo Sans Bold', sans-serif;
+  font-weight: 700;
+}
+
+.section-subtitle {
+  display: block;
+  font-size: 16px;
+}
+
+.input {
+  border: 1px solid #dddddd;
+  padding: 20px 26px;
+  font-size: 15px;
+  border-radius: 10px;
 }
 
 /* Импорт стилей шапки */
@@ -69,19 +116,25 @@ img {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  font-size: 13px;
+  font-weight: 400;
 }
 
 .navbar__button {
   margin-left: 30px;
+  font-size: 13px;
+  font-family: 'Museo Sans Bold', sans-serif;
+  font-weight: 700;
 }
 
 .navbar__phone {
   display: inline-block;
   color: #333333;
   font-size: 20px;
-  font-weight: 400;
   text-decoration: none;
-  margin-top: 10px;
+  margin-top: 6px;
+  font-family: 'Museo Sans Bold', sans-serif;
+  font-weight: 700;
 }
 
 @media (max-width: 768px) {
@@ -89,7 +142,7 @@ img {
     display: none;
   }
   .navbar__button {
-    font-size: 12px;
+    font-size: 10px;
     padding: 15px 26px;
   }
   .navbar__logo {
@@ -100,6 +153,7 @@ img {
 /* Стили для главного экрана */
 .hero {
   padding: 50px 0;
+  background-color: #f5f5f5;
 }
 
 .hero-block {
@@ -111,21 +165,25 @@ img {
 .hero-text {
   -ms-flex-preferred-size: 50%;
       flex-basis: 50%;
-  padding-right: 140px;
+  padding-right: 100px;
 }
 
 .hero-text__title {
   font-size: 41px;
-  font-weight: 550;
+  font-weight: 600;
   line-height: 55px;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
+  font-family: 'Museo Sans Bold', sans-serif;
+  font-weight: 700;
 }
 
 .hero-text__subtitle {
   display: inline-block;
   font-size: 20px;
-  font-weight: 500;
-  margin-bottom: 70px;
+  margin-bottom: 65px;
+  line-height: 25px;
+  font-family: 'Museo Sans Bold', sans-serif;
+  font-weight: 700;
 }
 
 .hero-list {
@@ -143,8 +201,13 @@ img {
   margin-bottom: 25px;
 }
 
+.hero-list__item:last-child {
+  margin-bottom: 0;
+}
+
 .hero-list__image {
-  width: 40px;
+  -ms-flex-preferred-size: 40px;
+      flex-basis: 40px;
   height: 40px;
   border: 2px solid #ffd200;
   display: -webkit-box;
@@ -158,10 +221,16 @@ img {
           justify-content: center;
   border-radius: 50%;
   margin-right: 30px;
+  min-width: 40px;
 }
 
 .hero-list__text {
   max-width: 300px;
+}
+
+.main-image {
+  -webkit-box-shadow: 7px 5px 10px rgba(0, 0, 0, 0.05), 16px 22px 35px rgba(0, 0, 0, 0.05);
+          box-shadow: 7px 5px 10px rgba(0, 0, 0, 0.05), 16px 22px 35px rgba(0, 0, 0, 0.05);
 }
 
 @media (max-width: 1200px) {
@@ -177,13 +246,18 @@ img {
   .hero-text {
     padding-right: 10px;
   }
+  .hero-text__title {
+    margin: 0;
+  }
+  .hero-text__subtitle {
+    margin-top: 13px;
+  }
 }
 
 @media (max-width: 768px) {
   .hero-text__title {
     font-size: 24px;
     line-height: 1.4;
-    margin-bottom: 15px;
   }
   .hero-text__subtitle {
     font-size: 16px;
@@ -197,6 +271,121 @@ img {
   }
   .hero-list__image {
     margin-right: 15px;
+  }
+}
+
+/* Стили для блоа offer */
+.offer {
+  background: url("../img/offer/offer-bg.png") no-repeat;
+  background-size: contain;
+  background-position: center right;
+  position: relative;
+}
+
+.offer:before {
+  content: '';
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+}
+
+.offer-block {
+  width: 50%;
+  padding-right: 90px;
+  position: relative;
+  margin-top: 0;
+}
+
+.offer__title {
+  max-width: 360px;
+  line-height: 35px;
+  margin-bottom: 24px;
+  margin-top: 0;
+}
+
+.offer__subtitle {
+  max-width: 250px;
+  margin-bottom: 30px;
+}
+
+.offer__input {
+  margin-bottom: 30px;
+  width: 240px;
+}
+
+.offer__input:first-child {
+  margin-right: 10px;
+}
+
+.offer__button {
+  width: 100%;
+  min-height: 70px;
+  font-family: 'Museo Sans Bold', sans-serif;
+  font-weight: 700;
+}
+
+.form__info {
+  margin-top: 31px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.form__info-text {
+  font-family: 'Museo Sans Light', sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 24px;
+  color: #333333;
+  margin-bottom: 5px;
+  margin-top: 0;
+}
+
+.form__info-link {
+  text-decoration: none;
+  font-family: 'Museo Sans Bold', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  color: #333333;
+}
+
+@media (max-width: 1200px) {
+  .offer {
+    background-size: cover;
+  }
+  .offer__input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .offer__button {
+    font-size: 13px;
+    padding-right: 70px;
+    padding-left: 70px;
+  }
+}
+
+@media (max-width: 768px) {
+  .offer {
+    background: #fff;
+  }
+  .offer-block {
+    width: 100%;
+    padding-right: 0;
+  }
+  .offer__title {
+    margin-top: 0;
+  }
+  .form__info {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }
 /*# sourceMappingURL=style.css.map */
